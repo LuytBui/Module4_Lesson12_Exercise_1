@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn-hide").click(function(){
+                $("#p-showHide").hide();
+            });
+
+            $("#btn-show").click(function(){
+                $("#p-showHide").show();
+            });
+
+
+            $("#btn-startAnimate").click(function () {
+                var div = $("#div-animate");
+                div.animate({left: '300px', width: '600', height: '300px', fontSize: '200px'}, "slow");
+            });
+            $("#btn-reverseAnimate").click(function () {
+                var div = $("#div-animate");
+                div.animate({left: '0px', width: '200px', height: '100px', fontSize: '16px'}, "slow");
+            });
+        });
+    </script>
+</head>
+<body>
+<div>
+    <p id="p-showHide">If you click on the "Hide" button, I will disappear.</p>
+    <button id="btn-hide">Hide</button>
+    <button id="btn-show">Show</button>
+</div>
+<hr>
+<button id="btn-startAnimate">Start Animation</button>
+<button id="btn-reverseAnimate">Reverse Animation</button>
+<p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to
+    first set the CSS position property of the element to relative, fixed, or absolute!</p>
+<div id="div-animate" style="background:#98bf21;height:100px;width:200px;position:relative;">HELLO</div>
+</body>
+</html>
